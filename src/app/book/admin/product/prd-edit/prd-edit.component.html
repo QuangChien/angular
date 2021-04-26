@@ -1,0 +1,87 @@
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+            <li><a href="">Quản lý Sách</a></li>
+            <li class="active">Cập nhật Sách</li>
+        </ol>
+    </div><!--/.row-->
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Cập nhật Sách</h1>
+        </div>
+    </div><!--/.row-->
+    <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form (submit)="submitEditForm($event)" [formGroup]="editForm">                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Tên Sách</label>
+                                    <input class="form-control" formControlName="title">
+                                    <div class="error" *ngIf="f.title.invalid && (f.title.dirty || f.title.touched)">
+                                        <div *ngIf="f.title.errors?.required">
+                                        Tên sách không được để trống!
+                                        </div>
+                                        <div *ngIf="f.title.errors?.minlength">
+                                        Tên sách phải dài ít nhất 4 ký tự!
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Giá Sách</label>
+                                    <input formControlName="price" type="number" min="0" class="form-control">
+                                    <div class="error" *ngIf="f.price.invalid && (f.price.dirty || f.price.touched)">
+                                        <div *ngIf="f.price.errors?.required">
+                                        Giá sách không được để trống!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Ảnh sách</label>
+                                    
+                                    <input (change)="onFileSelected($event)" id="img" type="file">
+                                    <br>
+                                    <img [src] = "image" width="250px">
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label>Danh mục</label>
+                                    <select formControlName="categoryId" class="form-control">
+                                        <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                                    </select>
+                                    <div class="error" *ngIf="f.categoryId.invalid && (f.categoryId.dirty || f.categoryId.touched)">
+                                        <div *ngIf="f.categoryId.errors?.required">
+                                        Phải chọn danh mục sách
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tác giả</label>
+                                    <select formControlName="authorId" class="form-control">
+                                        <option *ngFor="let author of authors" value="{{author.id}}">{{author.name}}</option>
+                                    </select>
+                                    <div class="error" *ngIf="f.authorId.invalid && (f.authorId.dirty || f.authorId.touched)">
+                                        <div *ngIf="f.authorId.errors?.required">
+                                        Phải chọn tác giả
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group">
+                                        <label>Mô tả sản phẩm</label>
+                                        <textarea name="prd_details" class="form-control" rows="3"></textarea>
+                                    </div> -->
+                                <button [disabled]="editForm.invalid" type="submit" class="btn btn-success">Cập nhật</button>
+                            </div>
+                        </form>  
+                    </div>
+                </div>
+            </div>
+            
+</div>
+

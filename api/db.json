@@ -1,0 +1,72 @@
+{
+  "categories": [
+    {
+      "name": "Sách Kinh Tế",
+      "id": 1
+    },
+    {
+      "name": "Sách Văn Học",
+      "id": 2
+    },
+    {
+      "name": "Sách Thiếu Nhi",
+      "id": 3
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Bước Chậm Lại Giữa Thế Gian Vội Vã (Tái Bản 2018)",
+      "price": 68000,
+      "categoryId": "2",
+      "authorId": "2",
+      "image": "https://firebasestorage.googleapis.com/v0/b/angular-b7750.appspot.com/o/Uploads%2F1618339005628?alt=media&token=073d5223-8760-48a7-9280-fbc67ad6982d"
+    },
+    {
+      "title": "Nhà Giả Kim (Tái Bản 2020)",
+      "price": 67000,
+      "categoryId": "1",
+      "authorId": "1",
+      "image": "https://firebasestorage.googleapis.com/v0/b/angular-b7750.appspot.com/o/Uploads%2F1618339047184?alt=media&token=aad7dde1-474b-4f20-a93e-c939666cac8c",
+      "id": 2
+    },
+    {
+      "title": "Sài Gòn Một Thuở \"Dân Ông Tạ Đó!\"",
+      "price": 50000,
+      "categoryId": 3,
+      "authorId": 1,
+      "image": "https://firebasestorage.googleapis.com/v0/b/angular-b7750.appspot.com/o/Uploads%2F1618339156156?alt=media&token=81f4a872-385a-422b-bfd5-91f308265838",
+      "id": 3
+    },
+    {
+      "title": "Con Chim Xanh Biếc Bay Về - Tặng Kèm 6 Postcard",
+      "price": 112000,
+      "categoryId": 3,
+      "authorId": 3,
+      "image": "https://firebasestorage.googleapis.com/v0/b/angular-b7750.appspot.com/o/Uploads%2F1618339228376?alt=media&token=9f9857bf-968b-49df-b2d5-56ee6d769ce6",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "title": " Ngày Hôm Qua Đã Từng - My Angel",
+      "price": 110000,
+      "categoryId": 2,
+      "authorId": 3,
+      "image": "https://firebasestorage.googleapis.com/v0/b/angular-b7750.appspot.com/o/Uploads%2F1618339276677?alt=media&token=92335cbb-b127-4080-85c8-880d3dcb2cb7"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Paulo Coelho",
+      "id": 1
+    },
+    {
+      "name": "Hae Min",
+      "id": 2
+    },
+    {
+      "name": "Nguyễn Nhật Ánh",
+      "id": 3
+    }
+  ]
+}

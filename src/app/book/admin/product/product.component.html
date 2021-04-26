@@ -1,0 +1,99 @@
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+       <ol class="breadcrumb">
+          <li>
+             <a href="#">
+                <svg class="glyph stroked home">
+                   <use xlink:href="#stroked-home"></use>
+                </svg>
+             </a>
+          </li>
+          <li class="active">Danh sách Sách</li>
+       </ol>
+    </div>
+    <!--/.row-->
+    <div class="row">
+       <div class="col-lg-12">
+          <h1 class="page-header">Danh sách Sách</h1>
+       </div>
+    </div>
+    <!--/.row-->
+    <div class="row">
+       <div class="col-lg-12">
+          <div class="panel panel-default">
+             <div class="panel-body">
+                <div class="bootstrap-table">
+                   <div class="fixed-table-toolbar">
+                      <div class="bars pull-left">
+                         <div id="toolbar" class="btn-group">
+                            <a routerLink="/admin/product/add" href="javascript:;" class="btn btn-success">
+                            <i class="glyphicon glyphicon-plus"></i> Thêm Sách
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="fixed-table-container">
+                      <div class="fixed-table-header">
+                         <table></table>
+                      </div>
+                      <div class="fixed-table-body">
+                         <div class="fixed-table-loading" style="top: 37px;">Loading, please wait…</div>
+                         <table data-toolbar="#toolbar" data-toggle="table" class="table table-hover">
+                            <thead>
+                               <tr>
+                                  <th style="">
+                                     <div class="th-inner sortable">ID</div>
+                                     <div class="fht-cell"></div>
+                                  </th>
+                                  <th style="">
+                                     <div class="th-inner sortable">Tên Sách</div>
+                                     <div class="fht-cell"></div>
+                                  </th>
+                                  <th style="">
+                                     <div class="th-inner sortable">Giá</div>
+                                     <div class="fht-cell"></div>
+                                  </th>
+                                  <th style="">
+                                     <div class="th-inner ">Ảnh sản phẩm</div>
+                                     <div class="fht-cell"></div>
+                                  </th>
+                                  <th style="">
+                                     <div class="th-inner ">Danh mục</div>
+                                     <div class="fht-cell"></div>
+                                  </th>
+                                  <th style="">
+                                    <div class="th-inner ">Tác giả</div>
+                                    <div class="fht-cell"></div>
+                                 </th>
+                                  <th style="">
+                                     <div class="th-inner ">Hành động</div>
+                                     <div class="fht-cell"></div>
+                                  </th>
+                               </tr>
+                            </thead>
+                            <tbody>
+                               <tr *ngFor="let product of products" data-index="0">
+                                  <td style=""> {{product.id}} </td>
+                                  <td style="">{{product.title}}</td>
+                                  <td style="">{{ product.price | currency: "VND" }}</td>
+                                  <td style=""><img height="180px" src="{{product.image}}"></td>
+                                  <td style="">{{product.category.name}}</td>
+                                  <td style="">{{product.author.name}}</td>
+                                  <td class="form-group">
+                                     <a href="javascript:;" routerLink="edit/{{product.id}}" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></a>
+                                     <a href="javascript:;" (click)="remove(product.id)" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                                  </td>
+                               </tr>
+                            </tbody>
+                         </table>
+                      </div>
+                      <div class="fixed-table-pagination"></div>
+                   </div>
+                </div>
+                <div class="clearfix"></div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <!--/.row-->	
+ </div>

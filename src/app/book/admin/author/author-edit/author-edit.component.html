@@ -1,0 +1,51 @@
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+       <ol class="breadcrumb">
+          <li>
+             <a href="#">
+                <svg class="glyph stroked home">
+                   <use xlink:href="#stroked-home"></use>
+                </svg>
+             </a>
+          </li>
+          <li><a href="">Quản lý Tác giả</a></li>
+          <li class="active">Cập nhật Tác giả</li>
+       </ol>
+    </div>
+    <!--/.row-->
+    <div class="row">
+       <div class="col-lg-12">
+          <h1 class="page-header">Cập nhật Tác giả</h1>
+       </div>
+    </div>
+    <!--/.row-->
+    <div class="row">
+       <div class="col-lg-12">
+          <div class="panel panel-default">
+             <div class="panel-body">
+                <div class="col-md-8">
+                   <!-- <div class="alert alert-danger">Danh mục đã tồn tại !</div> -->
+                   <form role="form" [formGroup]="editForm" (submit)="submitEditForm($event)">
+                      <div class="form-group">
+                         <label>Tên Tác giả:</label>
+                         <input formControlName="name" type="text" class="form-control" placeholder="Tên tác giả...">
+                         <div class="error" *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)">
+                              <div *ngIf="f.name.errors?.required">
+                                 Tên Tác giả không được để trống!
+                              </div>
+                              <div *ngIf="f.name.errors?.minlength">
+                                 Tên Tác giả phải dài ít nhất 4 ký tự!
+                              </div>
+                           </div>
+                      </div>
+                      <button [disabled]="editForm.invalid" type="submit" name="sbm" class="btn btn-success">Cập nhật</button>
+                    </form>
+                </div>
+             </div>
+          </div>
+       </div>
+       <!-- /.col-->
+    </div>
+    <!--/.main-->
+

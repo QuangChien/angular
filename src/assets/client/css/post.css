@@ -1,0 +1,44 @@
+
+
+.post__list {
+    padding-right: 6rem;
+   }
+   
+   .post__item {
+    display: flex;
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+}
+   
+   .post__item-img-wrap {
+       width: 30%;
+   }
+   
+   .post__item-img {
+       max-width: 80%;
+   }
+   
+   .post__item-content {
+       flex: 1;
+   }
+   
+   .post__item-link{
+       text-decoration: none;
+   }
+
+   
+   
+   .post__item-heading{
+       font-size: 20px;
+   }
+
+   .posts__item-description {
+       margin-top: 18px;
+       font-size: 14px;
+       color: #333;
+       display: -webkit-box;
+       -webkit-box-orient: vertical;
+       -webkit-line-clamp: 5;
+       text-overflow: ellipsis;
+       overflow: hidden;
+   }

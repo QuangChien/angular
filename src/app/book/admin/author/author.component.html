@@ -1,0 +1,59 @@
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+       <ol class="breadcrumb">
+          <li>
+             <a href="javascript:;">
+                <svg class="glyph stroked home">
+                   <use xlink:href="#stroked-home"></use>
+                </svg>
+             </a>
+          </li>
+          <li class="active">Quản lý Tác giả</li>
+       </ol>
+    </div>
+    <!--/.row-->
+    <div class="row">
+       <div class="col-lg-12">
+          <h1 class="page-header">Quản Tác giả</h1>
+       </div>
+    </div>
+    <!--/.row-->
+    <div style="margin-bottom: 16px;" id="toolbar" class="btn-group">
+       <a routerLink="/admin/author/add" href="javascript:;" class="btn btn-success">
+       <i class="glyphicon glyphicon-plus"></i> Thêm tác giả
+       </a>
+    </div>
+    
+    <div class="row">
+       <div class="col-md-12">
+          <div class="panel panel-default">
+             <div class="panel-body">
+                <table class="table">
+                   <thead>
+                      <tr>
+                         <th>ID</th>
+                         <th>Tên Tác giả</th>
+                         <th>Tổng số sách</th>
+                         <th>Hành động</th>
+                      </tr>
+                   </thead>
+                   <tbody>
+                      <tr *ngFor="let author of authors; index as i">
+                         <td style=""> {{i+1}} </td>
+                         <td style=""> {{author.name}} </td>
+                         <td> {{author.books.length}} </td>
+                         <td class="form-group">
+                            <a href="javascript:;" routerLink="edit/{{author.id}}" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></a>
+                            <a href="javascript:;" (click)="deleteAuthor(author.id)" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                         </td>
+                      </tr>
+                   </tbody>
+                </table>
+               </div>
+          </div>
+       </div>
+    </div>
+    <!--/.row-->
+ </div>
+ <!--/.main-->
+
